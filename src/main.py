@@ -34,7 +34,25 @@ while opcao != "0":
         print("Data:", data)
 
     elif opcao == "2":
-        print("Adicionar despesa")
+        descricao = input("Descrição da despesa: ")
+        valor = float(input("Valor da despesa: "))
+        categoria = input("Categoria da despesa: ")
+        data = input("Data da despesa: ")
+
+        despesa = {
+            "descricao": descricao,
+            "valor": valor,
+            "categoria": categoria,
+            "data": data,
+            "tipo": "despesa"
+        }
+
+        transacoes.append(despesa)
+
+        print("Despesa adicionada:", descricao)
+        print("Valor:", valor)
+        print("Categoria:", categoria)
+        print("Data:", data)
 
     elif opcao == "3":
         print("Listar transações")
