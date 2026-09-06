@@ -19,7 +19,7 @@ while opcao != "0":
         data = input("Data da receita: ")
 
         receita = {
-            "descrição": descricao,
+            "descricao": descricao,
             "valor": valor,
             "categoria": categoria,
             "data": data,
@@ -55,7 +55,13 @@ while opcao != "0":
         print("Data:", data)
 
     elif opcao == "3":
-        print("Listar transações")
+        for transacao in transacoes:
+            print("Descrição:", transacao["descricao"])
+            print("Valor:", transacao["valor"])
+            print("Categoria:", transacao["categoria"])
+            print("Data:", transacao["data"])
+            print("Tipo:", transacao["tipo"])
+            print("-------------------------")
 
     elif opcao == "4":
         print("Consultar saldo")
@@ -64,4 +70,5 @@ while opcao != "0":
         print("Encerrando o programa...")
 
     else:
-        print("Opcao inválida.")
+         print("Opção inválida.")
+        
