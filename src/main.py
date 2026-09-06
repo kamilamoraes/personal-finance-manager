@@ -64,7 +64,16 @@ while opcao != "0":
             print("-------------------------")
 
     elif opcao == "4":
-        print("Consultar saldo")
+        saldo = 0
+
+        for transacao in transacoes:
+            if transacao["tipo"] == "receita":
+                saldo += transacao["valor"]
+
+            elif transacao["tipo"] == "despesa":
+                saldo -= transacao["valor"]
+
+        print("Saldo:", saldo)
 
     elif opcao == "0":
         print("Encerrando o programa...")
