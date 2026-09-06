@@ -17,7 +17,17 @@ while opcao != "0":
         valor = float(input("Valor da receita: "))
         categoria = input("Categoria da receita: ")
         data = input("Data da receita: ")
-        
+
+        receita = {
+            "descrição": descricao,
+            "valor": valor,
+            "categoria": categoria,
+            "data": data,
+            "tipo": "receita"
+        }
+
+        transacoes.append(receita)
+
         print("Receita adicionada:", descricao)
         print("Valor:", valor)
         print("Categoria:", categoria)
