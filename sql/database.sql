@@ -32,3 +32,40 @@ VALUES
 (5, 'Cinema', 80.00, 'despesa', '2026-09-05', 5);
 
 SELECT * FROM transacoes;
+
+SELECT *
+FROM transacoes
+WHERE tipo = 'despesa';
+
+SELECT SUM(valor) AS total_receitas
+FROM transacoes
+WHERE tipo = 'receita';
+
+SELECT SUM(valor) AS total_despesas
+FROM transacoes
+WHERE tipo = 'despesa';
+
+SELECT
+    SUM(CASE WHEN tipo = 'receita' THEN valor ELSE 0 END)
+    -
+    SUM(CASE WHEN tipo = 'despesa' THEN valor ELSE 0 END)
+    AS saldo
+FROM transacoes;
+
+SELECT
+    categoria_id,
+    SUM(valor) AS total_despesas
+FROM transacoes
+WHERE tipo = 'despesa'
+GROUP BY categoria_id;
+
+SELECT
+    categorias.nome,
+    SUM(transacoes.valor) AS total
+FROM transacoes
+JOIN categorias
+    ON transacoes.categoria_id = categorias.id
+WHERE transacoes.tipo = 'despesa'
+GROUP BY categorias.nome;
+
+SELECT * FROM transacoes;
