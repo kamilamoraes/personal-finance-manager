@@ -22,3 +22,13 @@ VALUES
 (5, 'Lazer');
 
 SELECT * FROM categorias;
+
+INSERT INTO transacoes (id, descricao, valor, tipo, data, categoria_id)
+VALUES
+(1, 'Salário mensal', 3500.00, 'receita', '2026-09-01', 1),
+(2, 'Aluguel', 1000.00, 'despesa', '2026-09-02', 3),
+(3, 'Supermercado', 450.00, 'despesa', '2026-09-03', 2),
+(4, 'Passagem de ônibus', 120.00, 'despesa', '2026-09-04', 4),
+(5, 'Cinema', 80.00, 'despesa', '2026-09-05', 5);
+
+SELECT * FROM transacoes;
