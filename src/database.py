@@ -10,3 +10,17 @@ def conectar_banco():
 
     return conexao
 
+def listar_transacoes():
+    conexao = conectar_banco()
+
+    cursor = conexao.cursor()
+    cursor.execute("SELECT * FROM transacoes")
+
+    transacoes = cursor.fetchall()
+
+    for transacao in transacoes:
+        print(transacao)
+
+    cursor.close()
+    conexao.close()
+
