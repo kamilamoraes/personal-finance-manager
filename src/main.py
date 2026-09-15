@@ -1,3 +1,5 @@
+from database import listar_transacoes
+
 transacoes = []
 
 opcao = ""
@@ -10,7 +12,7 @@ while opcao != "0":
     print("4. Consultar saldo")
     print("0. Sair")
 
-    opcao = input ("Escolha uma opção: ")
+    opcao = input ("Escolha uma opção:")
 
     if opcao == "1":
         descricao = input("Descrição da receita: ")
@@ -55,13 +57,7 @@ while opcao != "0":
         print("Data:", data)
 
     elif opcao == "3":
-        for transacao in transacoes:
-            print("Descrição:", transacao["descricao"])
-            print("Valor:", transacao["valor"])
-            print("Categoria:", transacao["categoria"])
-            print("Data:", transacao["data"])
-            print("Tipo:", transacao["tipo"])
-            print("-------------------------")
+        listar_transacoes()
 
     elif opcao == "4":
         saldo = 0
@@ -79,5 +75,5 @@ while opcao != "0":
         print("Encerrando o programa...")
 
     else:
-         print("Opção inválida.")
+        print("Opção inválida.")
         
