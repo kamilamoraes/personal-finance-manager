@@ -1,4 +1,4 @@
-from database import listar_transacoes
+from database import listar_transacoes, adicionar_transacao
 
 transacoes = []
 
@@ -17,22 +17,21 @@ while opcao != "0":
     if opcao == "1":
         descricao = input("Descrição da receita: ")
         valor = float(input("Valor da receita: "))
-        categoria = input("Categoria da receita: ")
+        categoria_id = int(input("ID da categoria: "))
         data = input("Data da receita: ")
 
-        receita = {
-            "descricao": descricao,
-            "valor": valor,
-            "categoria": categoria,
-            "data": data,
-            "tipo": "receita"
-        }
-
-        transacoes.append(receita)
+       
+        adicionar_transacao(
+        descricao,
+        valor,
+        "receita",
+        data,
+        categoria_id
+    )
 
         print("Receita adicionada:", descricao)
         print("Valor:", valor)
-        print("Categoria:", categoria)
+        print("Categoria:", categoria_id)
         print("Data:", data)
 
     elif opcao == "2":
