@@ -1,4 +1,4 @@
-from database import listar_transacoes, adicionar_transacao
+from database import listar_transacoes, adicionar_transacao, consultar_saldo
 
 transacoes = []
 
@@ -43,7 +43,7 @@ while opcao != "0":
         adicionar_transacao(
             descricao,
             valor,
-            "despesa",
+            "receita",
             data,
             categoria_id
         )
@@ -57,14 +57,7 @@ while opcao != "0":
         listar_transacoes()
 
     elif opcao == "4":
-        saldo = 0
-
-        for transacao in transacoes:
-            if transacao["tipo"] == "receita":
-                saldo += transacao["valor"]
-
-            elif transacao["tipo"] == "despesa":
-                saldo -= transacao["valor"]
+        saldo = consultar_saldo()
 
         print("Saldo:", saldo)
 
