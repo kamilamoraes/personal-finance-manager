@@ -65,8 +65,9 @@ def consultar_saldo():
     cursor.close()
     conexao.close()
 
+
     return saldo
 
-    
-listar_transacoes()
+
+
 

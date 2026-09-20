@@ -77,22 +77,12 @@ WHERE id = 3;
 SELECT * FROM transacoes
 WHERE id = 3;
 
-INSERT INTO transacoes
-(id, descricao, valor, tipo, data, categoria_id)
-VALUES
-(6, 'Transação de teste', 10.00, 'despesa', '2026-09-06', 5);
-
-SELECT * FROM transacoes
-WHERE id = 6;
-
-DELETE FROM transacoes
-WHERE id = 6;
-
-SELECT * FROM transacoes;
-
 UPDATE transacoes
 SET valor = 450.00
 WHERE id = 3;
 
-SELECT * FROM transacoes;
+
+
+
+
 

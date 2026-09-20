@@ -1,7 +1,5 @@
 from database import listar_transacoes, adicionar_transacao, consultar_saldo
 
-transacoes = []
-
 opcao = ""
 
 while opcao != "0":
@@ -43,7 +41,7 @@ while opcao != "0":
         adicionar_transacao(
             descricao,
             valor,
-            "receita",
+            "despesa",
             data,
             categoria_id
         )
